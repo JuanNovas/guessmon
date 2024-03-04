@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessmon</title>
+    <link rel="icon" type="image/png" href="../static/pokeball_icon.png">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/scripts/reset_game.js"></script>
+    <script src="../static/scripts/suggestions.js"></script>
+    <script src="../static/scripts/luck_guess.js"></script>
+</head>
+<body style="background-image: url('../static/wallpapers/wallpaper4.webp'); background-size: cover; background-repeat: no-repeat;">
+    <h1>Guessmon</h1>
+    <button id="resetButton">Reset</button>
+    <div class="centerContainer">
+        <div class="searchContainer">
+            <button  id="luckyButton">Try luck?</button>
+            <form action="/" method="POST" class="search" id="guessForm">
+                <input autocomplete="off" autofocus id="guess" name="guess" placeholder="Pokemon" type="text">
+                <button  type="submit">Submit</button>
+                <ul id="suggestions" class="suggestions"></ul>
+            </form>
+        </div>
+    </div>
+    <div class="grid-container" style="display: flex;">
+        <div class="grid-item"  style="flex: 1; background-color: #FF0000;"> <img src="../static/misigno.webp" alt="Sprite"> </div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["generation b"] }};"> {{ format(progress["generation"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["hp b"] }};"> {{ format(progress["hp"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["attack b"] }};"> {{ format(progress["attack"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["defense b"] }};"> {{ format(progress["defense"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["sp. attack b"] }};"> {{ format(progress["sp. attack"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["sp. defense b"] }};"> {{ format(progress["sp. defense"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["speed b"] }};"> {{ format(progress["speed"]) }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ progress["types b"] }};"> {{ progress["types"] | join(', ') }}</div>
+    </div>
+    <div class="header-container" style="display: flex;" >
+        <div class="header-item"  style="flex: 1;"> Pokemon </div>
+        <div class="header-item"  style="flex: 1;"> Generation </div>
+        <div class="header-item"  style="flex: 1;"> HP </div>
+        <div class="header-item"  style="flex: 1;"> Attack </div>
+        <div class="header-item"  style="flex: 1;"> Defense </div>
+        <div class="header-item"  style="flex: 1;"> SP. Attack </div>
+        <div class="header-item"  style="flex: 1;"> SP. Defense </div>
+        <div class="header-item"  style="flex: 1;"> Speed </div>
+        <div class="header-item"  style="flex: 1;"> Types </div>
+    </div>
+    {% for attemp in attemps %}
+        <div class="grid-container" style="display: flex;" >
+            <div class="grid-item"  style="flex: 1; background-color: {{ attemp["sprite b"] }};"> <img src="{{ attemp["sprite"] }}" alt="{{ attemp["name"] }}"> </div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["generation b"] }}');"> {{ attemp["generation"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["hp b"] }}');"> {{ attemp["hp"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["attack b"] }}');"> {{ attemp["attack"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["defense b"] }}');"> {{ attemp["defense"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["sp. attack b"] }}');"> {{ attemp["sp. attack"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["sp. defense b"] }}');"> {{ attemp["sp. defense"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["speed b"] }}');"> {{ attemp["speed"] }}</div>
+            <div class="grid-item"  style="flex: 1; background-color: {{ attemp["types b"] }};"> {{ attemp["types"] }}</div>
+        </div>
+    {% endfor %}
+</body>
+</html>

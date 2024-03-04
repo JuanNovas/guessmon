@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessmon</title>
+    <link rel="icon" type="image/png" href="../static/pokeball_icon.png">
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body style="background-image: url('../static/wallpapers/wallpaper4.webp'); background-size: cover; background-repeat: no-repeat;">
+    <h1 style="color : #207020">Correct</h1>
+    <h2> {{ attemp["name"] }} </h2>
+    <h3> In {{ attemps_made }} attemps</h3>
+    <div class="header-container" style="display: flex;" >
+        <div class="header-item"  style="flex: 1;"> Pokemon </div>
+        <div class="header-item"  style="flex: 1;"> Generation </div>
+        <div class="header-item"  style="flex: 1;"> HP </div>
+        <div class="header-item"  style="flex: 1;"> Attack </div>
+        <div class="header-item"  style="flex: 1;"> Defense </div>
+        <div class="header-item"  style="flex: 1;"> SP. Attack </div>
+        <div class="header-item"  style="flex: 1;"> SP. Defense </div>
+        <div class="header-item"  style="flex: 1;"> Speed </div>
+        <div class="header-item"  style="flex: 1;"> Types </div>
+    </div>
+    <div class="grid-container" style="display: flex;" >
+        <div class="grid-item"  style="flex: 1; background-color: {{ attemp["sprite b"] }};"> <img src="{{ attemp["sprite"] }}" alt="Sprite"> </div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["generation b"] }}');"> {{ attemp["generation"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["hp b"] }}');"> {{ attemp["hp"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["attack b"] }}');"> {{ attemp["attack"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["defense b"] }}');"> {{ attemp["defense"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["sp. attack b"] }}');"> {{ attemp["sp. attack"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["sp. defense b"] }}');"> {{ attemp["sp. defense"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-image: url('{{ attemp["speed b"] }}');"> {{ attemp["speed"] }}</div>
+        <div class="grid-item"  style="flex: 1; background-color: {{ attemp["types b"] }};"> {{ attemp["types"] }}</div>
+    </div>
+    <div class="playAgain">
+        <button id="playAgainButton">Play again!</button>
+    </div>
+
+    <script>
+        function resetClicked(){
+            window.location.href = "/reset";
+        }
+
+        var resetButton = document.getElementById("playAgainButton");
+
+        resetButton.addEventListener("click", resetClicked);
+
+    </script>
+</body>
+</html>
