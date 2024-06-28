@@ -19,4 +19,5 @@ Welcome to GuessMon! This is an exciting Pokémon guessing game where you can te
 ![Screenshot from the app](screenshots/screenshot1.png)
 ![Screenshot from the app](screenshots/screenshot2.png)
 ![Screenshot from the app](screenshots/screenshot3.png)
+![Screenshot from the app](screenshots/screenshot4.png)
 ![Screenshot from the app](screenshots/correct.png)
