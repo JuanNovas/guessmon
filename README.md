@@ -13,3 +13,10 @@ Welcome to GuessMon! This is an exciting Pokémon guessing game where you can te
 - CSS
 - JavaScript
 - PokeAPI
+
+## 📸 Screenshots
+
+![Screenshot from the app](screenshots/screenshot1.png)
+![Screenshot from the app](screenshots/screenshot2.png)
+![Screenshot from the app](screenshots/screenshot3.png)
+![Screenshot from the app](screenshots/correct.png)
